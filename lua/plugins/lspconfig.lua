@@ -20,10 +20,6 @@ return {
       { 'Bilal2453/luvit-meta', lazy = true },
     },
     keys = {
-      { '<leader>g', desc = '[G]oto' },
-      { '<leader>gd', require('fzf-lua').lsp_definitions, desc = '[G]oto [D]efinitions' },
-      { '<leader>gr', require('fzf-lua').lsp_references, desc = '[G]oto [R]eferences' },
-      { '<leader>gi', require('fzf-lua').lsp_implementations, desc = '[G]oto [I]mplementation' },
       { '<leader>rn', vim.lsp.buf.rename, desc = '[R]e[n]ame' },
     },
 
