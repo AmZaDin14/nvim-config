@@ -9,16 +9,23 @@ return {
     picker = { enabled = true },
     quickfile = { enabled = true },
     scroll = { enabled = true },
-    statuscolumn = { enabled = true },
     words = { enabled = true },
+    lazygit = { enabled = true },
   },
   keys = {
+    {
+      '<leader>lg',
+      function()
+        Snacks.lazygit.open()
+      end,
+      desc = '[L]azy[G]it',
+    },
     {
       '<leader><space>',
       function()
         Snacks.picker.buffers { current = false }
       end,
-      desc = '[ ] Search Buffers',
+      desc = '[ ]Search Buffers',
     },
     -- Grep
     {

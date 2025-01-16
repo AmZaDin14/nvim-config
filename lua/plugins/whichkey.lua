@@ -8,8 +8,4 @@ return {
   opts = {
     delay = 0,
   },
-  spec = {
-    { '<leader>s', group = '[S]earch' },
-    { '<leader>v', group = '[V]env' },
-  },
 }

@@ -1,8 +1,11 @@
 return {
   'stevearc/oil.nvim',
+  lazy = true,
+  event = 'VeryLazy',
   dependencies = { 'echasnovski/mini.icons', opts = {} },
   keys = {
     { '-', '<cmd>Oil --float<CR>' },
+    { '<leader>e', '<cmd>Oil --float<CR>', desc = '[E]xplorer (Oil)' },
   },
   opts = {
     columns = {
