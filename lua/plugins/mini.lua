@@ -10,6 +10,5 @@ return {
     require('mini.ai').setup()
     require('mini.hipatterns').setup()
     require('mini.pairs').setup()
-    require('mini.indentscope').setup()
   end,
 }
