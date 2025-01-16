@@ -1,5 +1,7 @@
 return {
   'saghen/blink.cmp',
+  lazy = true,
+  event = 'VeryLazy',
   dependencies = 'rafamadriz/friendly-snippets',
   build = 'cargo build --release',
   opts = {

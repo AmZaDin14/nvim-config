@@ -1,6 +1,7 @@
 return {
   'folke/which-key.nvim',
-  event = 'VimEnter',
+  lazy = true,
+  event = 'VeryLazy',
   keys = {
     { 'n', '<Esc>', '<cmd>nohlsearch<cr>' },
   },

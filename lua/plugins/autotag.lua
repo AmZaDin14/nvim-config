@@ -1,5 +1,5 @@
 return {
-  'lewis6991/gitsigns.nvim',
+  'windwp/nvim-ts-autotag',
   lazy = true,
   event = 'VeryLazy',
   opts = {},

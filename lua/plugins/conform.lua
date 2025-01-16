@@ -17,6 +17,8 @@ return {
   },
   {
     'zapling/mason-conform.nvim',
+    lazy = true,
+    event = 'VeryLazy',
     config = function()
       require('mason-conform').setup {}
     end,

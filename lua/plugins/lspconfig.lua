@@ -1,21 +1,12 @@
 return {
   {
-    'williamboman/mason.nvim',
-    config = function()
-      require('mason').setup()
-    end,
-  },
-  {
-    'williamboman/mason-lspconfig.nvim',
-    config = function()
-      require('mason-lspconfig').setup {
-        ensure_installed = { 'lua_ls', 'basedpyright', 'ruff' },
-      }
-    end,
-  },
-  {
     'neovim/nvim-lspconfig',
+    lazy = true,
+    event = 'VeryLazy',
     dependencies = {
+      { 'williamboman/mason.nvim', opts = {} },
+      'williamboman/mason-lspconfig.nvim',
+      'WhoIsSethDaniel/mason-tool-installer.nvim',
       'saghen/blink.cmp',
       {
         'folke/lazydev.nvim',
@@ -26,6 +17,7 @@ return {
           },
         },
       },
+      { 'Bilal2453/luvit-meta', lazy = true },
     },
     keys = {
       { '<leader>g', desc = '[G]oto' },
@@ -36,11 +28,39 @@ return {
     },
 
     config = function()
+      local servers = {
+        lua_ls = {
+          package = 'lua-language-server',
+        },
+        basedpyright = {},
+        ruff = {},
+        taplo = {},
+        tailwindcss = {},
+        djlsp = {
+          package = 'django-template-lsp',
+        },
+      }
+
+      local ensure_installed = {}
+      for key, value in pairs(servers) do
+        table.insert(ensure_installed, value.package or key)
+      end
+
+      require('mason-tool-installer').setup { ensure_installed = ensure_installed }
+
       local capabilities = require('blink.cmp').get_lsp_capabilities()
-      require('lspconfig').lua_ls.setup { capabilities = capabilities }
-      require('lspconfig').basedpyright.setup { capabilities = capabilities }
-      require('lspconfig').ruff.setup { capabilities = capabilities }
-      require('lspconfig').djlsp.setup { capabilities = capabilities }
+
+      require('mason-lspconfig').setup {
+        ensure_installed = {},
+        automatic_installation = {},
+        handlers = {
+          function(server_name)
+            local server = servers[server_name] or {}
+            server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
+            require('lspconfig')[server_name].setup(server)
+          end,
+        },
+      }
     end,
   },
 }

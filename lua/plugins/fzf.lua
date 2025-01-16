@@ -1,5 +1,7 @@
 return {
   'ibhagwan/fzf-lua',
+  lazy = true,
+  event = 'VeryLazy',
   dependencies = { 'echasnovski/mini.icons' },
   keys = {
     { '<leader>s', desc = '[S]earch' },

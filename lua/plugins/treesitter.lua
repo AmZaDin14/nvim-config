@@ -1,9 +1,11 @@
 return {
   'nvim-treesitter/nvim-treesitter',
+  lazy = true,
+  event = 'VeryLazy',
   build = ':TSUpdate',
   config = function()
     require('nvim-treesitter.configs').setup {
-      ensure_installed = { 'lua', 'vim', 'vimdoc' },
+      ensure_installed = { 'lua', 'vim', 'vimdoc', 'python', 'html', 'htmldjango' },
       auto_install = true,
       highlight = {
         enable = true,
