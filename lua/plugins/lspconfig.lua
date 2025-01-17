@@ -24,6 +24,7 @@ return {
     },
 
     config = function()
+      local capabilities = require('blink.cmp').get_lsp_capabilities()
       local servers = {
         lua_ls = {
           package = 'lua-language-server',
@@ -41,10 +42,7 @@ return {
       for key, value in pairs(servers) do
         table.insert(ensure_installed, value.package or key)
       end
-
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
-
-      local capabilities = require('blink.cmp').get_lsp_capabilities()
 
       require('mason-lspconfig').setup {
         ensure_installed = {},
@@ -57,6 +55,8 @@ return {
           end,
         },
       }
+
+      require('lspconfig').djlsp.setup(capabilities)
     end,
   },
 }
