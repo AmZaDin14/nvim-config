@@ -14,6 +14,7 @@ return {
   },
   -- stylua: ignore
   keys = {
+    { '<leader>hn', function() require('snacks').notifier.show_history() end, desc = '[H]istory ([N]otification)' },
     { '<leader>lg', function() require('snacks').lazygit.open() end, desc = '[L]azy[G]it' },
     { '<leader><space>', function() require('snacks').picker.buffers { current = false } end, desc = '[ ]Search Buffers', },
     -- Grep
@@ -27,7 +28,6 @@ return {
     { '<leader>sh', function() require('snacks').picker.help() end, desc = '[S]earch [H]elp Pages', },
     { '<leader>sk', function() require('snacks').picker.keymaps() end, desc = '[S]earch [K]eymaps', },
     -- LSP
-    { '<leader>ss', function() require('snacks').picker.lsp_symbols() end, desc = '[S]earch LSP [S]ymbols', },
     { 'gd', function() require('snacks').picker.lsp_definitions() end, desc = '[G]oto [D]efinition', },
     { 'gr', function() require('snacks').picker.lsp_references() end, nowait = true, desc = '[G]oto [R]eferences', },
     { 'gi', function() require('snacks').picker.lsp_implementations() end, desc = '[G]oto [I]mplementation', },
