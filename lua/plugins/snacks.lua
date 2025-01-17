@@ -1,16 +1,19 @@
 return {
   'folke/snacks.nvim',
   priority = 1000,
-  lazy = true,
-  event = 'VeryLazy',
+  lazy = false,
+  -- event = 'VeryLazy',
   opts = {
     indent = { enabled = true },
+    dashboard = { enabled = true },
     notifier = { enabled = true },
     picker = { enabled = true },
     quickfile = { enabled = true },
     scroll = { enabled = true },
     words = { enabled = true },
     lazygit = { enabled = true },
+    input = { enabled = true },
+    dim = { enabled = true },
   },
   -- stylua: ignore
   keys = {
