@@ -8,6 +8,7 @@ return {
         lua = { 'stylua' },
         python = { 'ruff_organize_imports', 'ruff_format' },
         htmldjango = { 'djlint' },
+        sh = { 'shfmt' },
       },
       format_on_save = {
         timeout_ms = 500,

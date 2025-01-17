@@ -14,7 +14,7 @@ return {
   },
   -- stylua: ignore
   keys = {
-    { '<leader>lg', function() require('snacks').lazygit.open() end, desc = '[L]azy[G]it', },
+    { '<leader>lg', function() require('snacks').lazygit.open() end, desc = '[L]azy[G]it' },
     { '<leader><space>', function() require('snacks').picker.buffers { current = false } end, desc = '[ ]Search Buffers', },
     -- Grep
     { '<leader>sb', function() require('snacks').picker.lines() end, desc = '[S]earch in [B]uffer', },
@@ -26,11 +26,10 @@ return {
     { '<leader>sd', function() require('snacks').picker.diagnostics() end, desc = '[S]earch [D]iagnostics', },
     { '<leader>sh', function() require('snacks').picker.help() end, desc = '[S]earch [H]elp Pages', },
     { '<leader>sk', function() require('snacks').picker.keymaps() end, desc = '[S]earch [K]eymaps', },
-    { '<leader>qp', function() require('snacks').picker.projects() end, desc = 'Projects', },
     -- LSP
+    { '<leader>ss', function() require('snacks').picker.lsp_symbols() end, desc = '[S]earch LSP [S]ymbols', },
     { 'gd', function() require('snacks').picker.lsp_definitions() end, desc = '[G]oto [D]efinition', },
     { 'gr', function() require('snacks').picker.lsp_references() end, nowait = true, desc = '[G]oto [R]eferences', },
     { 'gi', function() require('snacks').picker.lsp_implementations() end, desc = '[G]oto [I]mplementation', },
-    { '<leader>ss', function() require('snacks').picker.lsp_symbols() end, desc = 'LSP Symbols', },
   },
 }

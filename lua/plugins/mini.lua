@@ -15,9 +15,9 @@ return {
       require('mini.sessions').setup()
     end,
   },
-  {
-    'echasnovski/mini.starter',
-    lazy = false,
-    opts = {},
-  },
+  -- {
+  --   'echasnovski/mini.starter',
+  --   lazy = false,
+  --   opts = {},
+  -- },
 }
