@@ -5,7 +5,7 @@ return {
   branch = 'regexp',
   dependencies = { 'nvim-telescope/telescope.nvim', lazy = true },
   keys = {
-    { '<leader>vs', ':VenvSelect', desc = '[V]env [S]elect' },
+    { '<leader>vs', '<cmd>VenvSelect<CR>', desc = '[V]env [S]elect' },
   },
   opts = {},
 }
