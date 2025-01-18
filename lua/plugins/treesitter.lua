@@ -4,6 +4,7 @@ return {
     lazy = true,
     event = 'VeryLazy',
     build = ':TSUpdate',
+    dependencies = { 'nvim-treesitter/nvim-treesitter-context', opts = {} },
     config = function()
       require('nvim-treesitter.configs').setup {
         ensure_installed = { 'lua', 'vim', 'vimdoc', 'python', 'html', 'htmldjango' },
@@ -20,15 +21,5 @@ return {
         },
       }
     end,
-  },
-  {
-    'Wansmer/treesj',
-    lazy = true,
-    event = 'VeryLazy',
-    dependencies = { 'nvim-treesitter/nvim-treesitter' }, -- if you install parsers with `nvim-treesitter`
-    keys = {
-      { '<leader>m', '<cmd>TSJToggle<CR>', desc = 'Toggle TS Join' },
-    },
-    opts = {},
   },
 }

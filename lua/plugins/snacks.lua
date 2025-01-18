@@ -16,6 +16,12 @@ return {
     rename = { enabled = true },
     scroll = { enabled = true },
     words = { enabled = true },
+
+    styles = {
+      notification = { border = 'single' },
+      notification_history = { border = 'single' },
+      input = { border = 'single' },
+    },
   },
   -- stylua: ignore
   keys = {
