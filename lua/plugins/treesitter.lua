@@ -7,8 +7,9 @@ return {
     dependencies = { 'nvim-treesitter/nvim-treesitter-context', opts = {} },
     config = function()
       require('nvim-treesitter.configs').setup {
-        ensure_installed = { 'lua', 'vim', 'vimdoc', 'python', 'html', 'htmldjango' },
+        ensure_installed = { 'lua', 'markdown', 'markdown_inline', 'vim', 'vimdoc', 'python', 'html', 'htmldjango' },
         auto_install = true,
+        markdown = { enable = true },
         highlight = {
           enable = true,
           disable = function(lang, buf)

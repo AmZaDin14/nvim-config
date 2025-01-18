@@ -49,22 +49,6 @@ vim.api.nvim_create_autocmd('LspProgress', {
   end,
 })
 
--- Check if 'manage.py' exists in the current working directory
-local function check_manage_py()
-  local manage_py = vim.fn.findfile('manage.py', '.;')
-  return manage_py ~= ''
-end
-
--- Set up an autocmd for setting the filetype
-if check_manage_py() then
-  vim.api.nvim_create_autocmd({ 'BufRead', 'BufNewFile' }, {
-    pattern = '*.html',
-    callback = function()
-      vim.bo.filetype = 'htmldjango'
-    end,
-  })
-end
-
 vim.api.nvim_create_autocmd('User', {
   pattern = 'MiniFilesActionRename',
   callback = function(event)

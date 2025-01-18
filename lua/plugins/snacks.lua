@@ -35,6 +35,7 @@ return {
     -- search
     { '<leader>s"', function() require('snacks').picker.registers() end, desc = '[S]earch Registers' },
     { '<leader>sf', function() require('snacks').picker.smart { finders = { 'files' } } end, desc = '[S]earch [F]iles' },
+    { '<leader>sc', function() require('snacks').picker.smart { finders = { 'files' }, dirs = {"~/.config/nvim/"} } end, desc = '[S]earch [C]onfig' },
     { '<leader>sd', function() require('snacks').picker.diagnostics() end, desc = '[S]earch [D]iagnostics' },
     { '<leader>sh', function() require('snacks').picker.help() end, desc = '[S]earch [H]elp Pages' },
     { '<leader>sk', function() require('snacks').picker.keymaps() end, desc = '[S]earch [K]eymaps' },
